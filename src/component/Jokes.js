@@ -33,7 +33,7 @@ export default class Jokes extends Component {
         if (!this.seenJokes.has(res.data["joke"])) {
           console.log("NOT AVAILABLE");
           newJokes.push({
-            key: uuid(),
+            id: uuid(),
             text: res.data["joke"],
             votes: 0,
           });
@@ -104,6 +104,7 @@ export default class Jokes extends Component {
               votes={j.votes}
               text={j.text}
               key={j.id}
+              id={j.id}
             />
           ))}
         </div>
